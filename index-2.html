@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Author — Books</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A; --navy-2:#0E2547; --gold:#C9A24B; --gold-soft:#D9BD7C;
+    --ivory:#F7F1E3; --ink-soft:#4A5062; --line:rgba(201,162,75,0.35);
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0; min-height:100%;
+    background:radial-gradient(120% 140% at 50% -10%, var(--navy-2) 0%, var(--navy) 55%, #081729 100%);
+    color:var(--ivory); font-family:'Source Serif 4',Georgia,serif;
+    display:flex; flex-direction:column; align-items:center; padding:64px 20px 40px;
+  }
+  h1{ font-family:'Playfair Display',Georgia,serif; font-weight:600; color:#fff; font-size:clamp(24px,4.5vw,34px); margin:0 0 8px; text-align:center; }
+  .eyebrow{ font-style:italic; color:var(--gold-soft); font-size:14px; margin-bottom:16px; text-align:center; }
+  .ribbon{ width:150px; height:44px; margin-bottom:22px; }
+  .books{ width:100%; max-width:560px; display:grid; gap:18px; margin-top:30px; }
+  .book-card{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    background:rgba(255,255,255,0.03); border:1px solid var(--line);
+    padding:22px 24px; text-decoration:none; color:inherit; transition:transform .15s ease, border-color .15s ease;
+  }
+  .book-card:hover{ transform:translateY(-2px); border-color:var(--gold); }
+  .book-card .meta h2{ font-family:'Playfair Display',serif; font-size:18px; color:#fff; margin:0 0 6px; }
+  .book-card .meta p{ margin:0; font-size:14px; color:#B9C1D6; }
+  .book-card .arrow{ font-size:20px; color:var(--gold); flex-shrink:0; }
+  .book-card.soon{ opacity:.5; pointer-events:none; }
+  .book-card.soon .arrow{ display:none; }
+  .tag{ display:inline-block; font-size:11px; letter-spacing:.05em; color:var(--gold-soft); border:1px solid var(--gold); padding:2px 8px; margin-top:6px; }
+  footer{ margin-top:50px; font-size:12px; color:#6E7691; text-align:center; }
+
+  @media (prefers-color-scheme: light){
+    :root[data-theme="dark"]{ }
+  }
+</style>
+</head>
+<body>
+  <svg class="ribbon" viewBox="0 0 210 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 45 C40 55, 75 50, 105 20" fill="none" stroke="#C9A24B" stroke-width="2.2"/>
+    <path d="M190 45 C170 55, 135 50, 105 20" fill="none" stroke="#F7F1E3" stroke-width="2.2"/>
+    <circle cx="105" cy="20" r="3" fill="#C9A24B"/>
+  </svg>
+  <p class="eyebrow">Author</p>
+  <h1>Books &amp; Ebooks</h1>
+
+  <div class="books">
+    <a class="book-card" href="./negotiating-the-union.html">
+      <div class="meta">
+        <h2>Negotiating the Union</h2>
+        <p>Wisdom for Singlehood, Marriage, and the Courage to Unlearn Relationship Myths</p>
+      </div>
+      <div class="arrow">&rarr;</div>
+    </a>
+
+    <div class="book-card soon">
+      <div class="meta">
+        <h2>Living in Today</h2>
+        <p>A practical, faith-inclined guide to living in the present</p>
+        <span class="tag">Coming soon</span>
+      </div>
+    </div>
+
+    <div class="book-card soon">
+      <div class="meta">
+        <h2>Breaking the Cycle</h2>
+        <p>Available now on The Quiet Shelf</p>
+        <span class="tag">See main store</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy; 2026 Author. All rights reserved.</footer>
+</body>
+</html>
